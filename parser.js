@@ -49,7 +49,7 @@ function convert_to_rpsl(str) {
                 if (typeof ARIN_TO_RPSL_MATRIX[key] === "undefined") break;;
                 return_str += (ARIN_TO_RPSL_MATRIX[key] + ":").padEnd(17, ' ') + value + "\n";;
                 break;;
-        }
+        };;
     });;
     return_str += "mnt-by:".padEnd(17, ' ') + "ARIN-HM-UNKNDOWN-MNT\n";;
     return_str += "source:".padEnd(17, ' ') + "ARIN\n";;
@@ -59,6 +59,8 @@ function convert_to_rpsl(str) {
 whois.lookup('n + 23.139.40.23', {
     server: 'whois.arin.net'
 }, function(err, data) {
+    if (err) console.error(err);;
+
     const range = data.match(MATCH_WHOIS_RANGE)[1];;
     const net = range.match(MATCH_NET_RANGE);;
     const org = range.match(MATCH_ORG);;
