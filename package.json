@@ -1,0 +1,11 @@
+{
+  "name": "arin-rpsl",
+  "version": "1.0.0",
+  "description": "Proxy ARIN whois to RPSL format",
+  "main": "proxy.js",
+  "author": "Kjartan Hrafnkelsson",
+  "license": "MIT",
+  "dependencies": {
+    "whois": "^2.13.9"
+  }
+}
